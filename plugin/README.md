@@ -4,7 +4,9 @@ Este pacote prepara a integração para distribuição. Não está aprovado ou d
 
 Com a conexão configurada e autorizada, peça: “Crie meu site e envie ao SitePerto para eu conferir.” A integração retorna uma prévia do dono. Para disponibilizar o endereço público, publique pelo painel do SitePerto.
 
-Na primeira conexão, entre na sua conta e autorize somente o site escolhido. A conexão atual exige conta e site existentes. Não cria contas, não publica automaticamente e não alcança contatos, cobrança ou outros projetos. Você pode revogar o acesso pelo editor.
+Na primeira conexão, use Google para entrar ou criar sua conta gratuita, sem cartão, na tela do SitePerto. Depois, autorize somente o site escolhido; se sua conta ainda não possui site e é elegível, dê um nome ao primeiro e confirme **Criar site e autorizar**. Ele começa protegido, dentro das cotas da conta. As ferramentas da IA não criam contas, não publicam automaticamente e não alcançam contatos, cobrança ou outros projetos. Você pode revogar o acesso pelo editor.
+
+A continuidade de cadastro com Google passou em testes de callback e banco isolado. A comprovação completa com uma conta Google nova no navegador ainda está pendente.
 
 O pacote contém somente metadados, um endereço HTTPS remoto fixo, ícone e captura de um site sintético. Não instala programas, não inclui chaves, não executa comandos ou hooks e não lê pastas do computador.
 

@@ -13,10 +13,12 @@ O teste não comprova facilidade da configuração inicial, disponibilidade em t
 ## Primeira conexão remota em beta
 
 1. Adicione `https://api.storeexperts.com.br/mcp` como servidor MCP remoto em um aplicativo compatível com Streamable HTTP e OAuth.
-2. Entre na sua conta SitePerto.
-3. Escolha o site e clique em **Autorizar conexão**.
+2. Use Google para entrar ou criar sua conta gratuita, sem cartão, e continue na mesma conexão. Os termos aparecem antes de continuar; quem já possui senha pode usar o acesso existente.
+3. Escolha seu site e clique em **Autorizar conexão**. Se ainda não possui site e sua conta é elegível, dê um nome ao primeiro e use **Criar site e autorizar**: ele começa protegido, dentro das cotas da conta.
 
 Você não copia chaves. Se já estiver conectado e só houver um site elegível, ele vem selecionado. A autorização dura até sete dias; o aplicativo renova automaticamente o acesso de uma hora dentro desse período. Depois, você autoriza novamente. Revogue a conexão no editor do site quando quiser.
+
+O cadastro e o primeiro site são confirmados por você na tela do SitePerto. As ferramentas da IA não criam contas nem publicam automaticamente. A continuidade com Google passou em testes de callback e banco isolado; a comprovação completa com uma conta Google nova no navegador ainda está pendente.
 
 **Exemplo de pedido:** “Consulte meu site, leia o título e o CSS e altere a chamada principal. Preserve as imagens e me mostre a prévia.”
 
