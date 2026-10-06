@@ -85,7 +85,7 @@ A edição parcial aceita sites HTML prontos e preserva o manifesto. Ela não ad
 - Destino HTTPS fixo. Nenhum download arbitrário de URL, build, comando remoto ou execução de código enviado. O retorno local abre temporariamente apenas `127.0.0.1` durante a autorização e fecha ao concluir ou após cinco minutos.
 - Arquivos privados, links simbólicos, caminhos de travessia e formatos de credenciais reconhecidos são recusados. A detecção não reconhece todos os segredos ou dados pessoais: revise os arquivos públicos.
 - Limites por IP/conexão, quatro requisições MCP concorrentes e um envio por processo; até 20 tentativas de atualização por hora por conexão. Limites operacionais não são SLA.
-- Até três conexões ativas por usuário/site e 20 por usuário, com limites globais. Cadastros públicos de aplicativos expiram em 30 dias; autorizações expiradas e revogações antigas são limpas. A auditoria própria tem retenção de até 90 dias.
+- Até três conexões ativas por usuário/site e 20 por usuário, com limites globais. Cadastros públicos de aplicativos expiram em 30 dias. A rotina limpa credenciais expiradas; conserva somente a referência da atualização pendente por até 30 dias após a expiração, para retomar a mesma conexão sem ocupar outra vaga. Revogações com mais de um dia são removidas. A auditoria própria tem retenção de até 90 dias e teto conjunto de 50.000 registros; os mais antigos saem primeiro, sem afetar auditorias de outros serviços.
 - O conector não mantém uma cópia ZIP permanente nem aumenta a cota. Os arquivos ficam na biblioteca e nos mecanismos de histórico já existentes.
 - O processo local tem os privilégios do usuário. Não é um sandbox contra malware ou contra uma IA que já tenha acesso independente ao computador.
 
