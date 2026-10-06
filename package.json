@@ -1,0 +1,33 @@
+{
+  "name": "@siteperto/local-connector",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "siteperto": "src/cli.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "test": "node --test src/*.test.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "fflate": "0.8.3"
+  },
+  "description": "Scoped SitePerto MCP and OAuth local bridge for ready static websites",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Store-Experts/siteperto-mcp.git"
+  },
+  "homepage": "https://siteperto.com/guias/conectar-ia-local",
+  "files": [
+    "src",
+    "README.md",
+    "SECURITY.md",
+    "LICENSE"
+  ]
+}
