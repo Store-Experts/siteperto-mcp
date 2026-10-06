@@ -20,6 +20,15 @@ A conexão remota não consegue ler o localhost ou as pastas do computador. Para
 
 Pré-requisito: Node.js 22 ou superior e uma pasta de saída estática com `index.html`, como `dist` ou `out`. Não envie fontes que precisam de build, PHP, banco ou servidor Node.
 
+Você pode iniciar sem clonar nem editar JSON, com a versão pública fixada:
+
+```sh
+npx --yes --ignore-scripts --package=github:Store-Experts/siteperto-mcp#v0.2.0 siteperto connect /caminho/absoluto/meu-site/dist
+npx --yes --ignore-scripts --package=github:Store-Experts/siteperto-mcp#v0.2.0 siteperto send /caminho/absoluto/meu-site/dist
+```
+
+O primeiro comando conecta; o segundo é usado para as atualizações. O npm obtém somente esta integração e suas dependências fixadas. A versão por tag facilita repetir a instalação; confira o código e o fornecedor antes de executá-la.
+
 Com o pacote baixado ou o repositório clonado, instale as dependências nesta pasta:
 
 ```sh
@@ -86,7 +95,7 @@ A edição parcial aceita sites HTML prontos e preserva o manifesto. Ela não ad
 npm test
 ```
 
-Dependências fixadas e lockfile: [SDK oficial MCP](https://github.com/modelcontextprotocol/typescript-sdk) 1.32.1 e fflate 0.8.3. Protocolo testado pelo SDK, sem chamar um modelo pago. Um teste do protocolo não substitui a homologação do aplicativo de IA escolhido.
+Dependências fixadas e lockfile: [SDK oficial MCP](https://github.com/modelcontextprotocol/typescript-sdk) 1.32.1 e fflate 0.8.3. Protocolo testado pelo SDK, sem chamar um modelo pago. Em 06/10/2026, o teste sintético em produção concluiu login, envio local, leitura e edição remota, renovação automática, deduplicação e revogação; o tema ativo e outro rascunho permaneceram idênticos. Um teste do protocolo não substitui a homologação do aplicativo de IA escolhido.
 
 A conexão manual antiga de uma hora continua disponível como opção avançada em `src/server.mjs`, para usuários existentes; a jornada OAuth é a opção recomendada para novas conexões.
 

@@ -51,3 +51,22 @@ test("oversized stdio frames stop the client without echoing input or credential
   assert.equal(output, ""); assert.match(errors, /Mensagem MCP acima do limite/);
   assert.equal(errors.includes("x".repeat(100)), false);
 });
+
+test("OAuth local bridge performs a real stdio handshake, keeps one directory and refuses an unconnected upload", async () => {
+  const root = await mkdtemp(path.join(os.tmpdir(), "siteperto-oauth-stdio-"));
+  const transport = new StdioClientTransport({ command: process.execPath, args: [fileURLToPath(new URL("cli.mjs", import.meta.url)), "mcp", root], stderr: "pipe" });
+  const client = new Client({ name: "siteperto-oauth-stdio-fixture", version: "0.2.0" });
+  try {
+    await writeFile(path.join(root, "index.html"), "<!doctype html><html><body>OAuth fixture</body></html>");
+    await client.connect(transport);
+    assert.deepEqual((await client.listTools()).tools.map(tool => tool.name).sort(), ["get_site", "inspect_site", "send_update"]);
+    const inspected = await client.callTool({ name: "inspect_site", arguments: { directory: path.dirname(root), projectId: "foreign" } });
+    assert.equal(inspected.isError, undefined);
+    const info = JSON.parse(inspected.content[0].text); assert.equal(info.fileCount, 1); assert.equal("archive" in info, false);
+    assert.equal((await client.callTool({ name: "send_update" })).isError, true);
+  } finally {
+    await client.close(); await transport.close();
+    const target = path.resolve(root); assert.equal(path.dirname(target), path.resolve(os.tmpdir())); assert.ok(path.basename(target).startsWith("siteperto-oauth-stdio-"));
+    await rm(target, { recursive: true, force: true });
+  }
+});
