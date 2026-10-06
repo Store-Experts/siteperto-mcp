@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "siteperto",
+  "version": "0.1.0",
+  "description": "Envie seu site HTML criado com IA ao SitePerto, confira a prévia e peça alterações no site autorizado.",
+  "author": { "name": "Store Experts", "url": "https://siteperto.com" },
+  "homepage": "https://siteperto.com/guias/conectar-ia-local",
+  "repository": "https://github.com/Store-Experts/siteperto-mcp",
+  "license": "MIT",
+  "keywords": ["site", "hospedagem", "landing-page", "html", "brasil"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "SitePerto",
+        "shortDescription": "Envie seu site e confira a prévia",
+        "longDescription": "Conecte um site do SitePerto à sua IA. Envie HTML, CSS, JavaScript e imagens já disponíveis na conversa ou peça alterações no site autorizado. Confira a prévia e publique pelo painel. Conexão em beta, limitada ao site escolhido, sem acesso a contatos ou cobrança. Requer conta e site existentes no SitePerto.",
+        "developerName": "Store Experts",
+        "category": "Developer Tools",
+        "capabilities": ["Consultar site autorizado", "Enviar e atualizar arquivos estáticos"],
+        "websiteURL": "https://siteperto.com",
+        "supportURL": "https://siteperto.com/#contato",
+        "privacyPolicyURL": "https://siteperto.com/privacidade",
+        "termsOfServiceURL": "https://siteperto.com/termos",
+        "defaultPrompt": [
+          "Crie um site simples para uma loja de calçados e envie ao SitePerto para eu conferir.",
+          "Atualize a chamada principal do meu site e me mostre a prévia."
+        ],
+        "brandColor": "#145C46",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png",
+        "screenshots": ["./assets/site-preview.jpg"]
+      }
+    }
+  }
+}

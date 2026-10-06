@@ -4,7 +4,13 @@ Conecte sua IA a **um site escolhido por você**, envie o site HTML pronto e pe�
 
 O fluxo usa MCP e OAuth com PKCE, no mesmo padrão de conexão por endereço, login e autorização usado por servidores remotos como os da Cloudflare. É uma integração independente; não é um plugin oficial do ChatGPT, Claude, Codex ou Antigravity. A disponibilidade de servidores personalizados depende do aplicativo e do plano de cada fornecedor.
 
-## Conexão remota: três decisões
+## Depois de conectar: peça na conversa
+
+“Crie um site simples para uma loja de calçados.” Depois: “Coloque no SitePerto e me mande a prévia.” Essa sequência passou no ChatGPT em 06/10/2026, com conta, site e conexão pessoal já configurados; o modelo encontrou a integração sem seleção manual de ferramenta e enviou os arquivos sem download/novo anexo de ZIP. A prévia é para o dono conferir; a publicação e o endereço público continuam pelo painel.
+
+O teste não comprova facilidade da configuração inicial, disponibilidade em todas as contas/planos, compatibilidade com outros aplicativos ou instalação pública. A primeira configuração abaixo é uma opção avançada em beta.
+
+## Primeira conexão remota em beta
 
 1. Adicione `https://api.storeexperts.com.br/mcp` como servidor MCP remoto em um aplicativo compatível com Streamable HTTP e OAuth.
 2. Entre na sua conta SitePerto.
@@ -15,6 +21,10 @@ Você não copia chaves. Se já estiver conectado e só houver um site elegível
 **Exemplo de pedido:** “Consulte meu site, leia o título e o CSS e altere a chamada principal. Preserve as imagens e me mostre a prévia.”
 
 A conexão remota não consegue ler o localhost ou as pastas do computador. Para essa jornada, use a ponte abaixo.
+
+## Distribuição pelo diretório: em preparação
+
+A pasta `plugin/` contém o pacote remoto de metadados, endpoint fixo e assets públicos/sintéticos, sem hooks, executáveis ou credenciais. `python package-plugin.py /caminho/de/saida` gera o ZIP por uma lista limitada de seis arquivos; `python package-plugin.test.py` verifica exclusões, limites e bloqueio de configurações indevidas. Não há publicação ou aprovação no diretório. Identidade verificada, validação no portal e revisão externa continuam necessárias. Consulte os [requisitos oficiais de submissão](https://developers.openai.com/plugins/deploy/submission).
 
 ## Seu projeto local: conectar uma vez, depois enviar
 
